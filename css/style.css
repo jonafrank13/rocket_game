@@ -1,0 +1,182 @@
+body
+{
+	background-image: url("..\\images\\backgrounds\\00903_HD.jpg") ;
+	background-size: 100%;
+	background-repeat: none ;
+	background-color: rgb(0,0,0);
+}
+#myPic
+{
+	background-image: url("..\\images\\jonafrank.jpg");
+	-moz-border-radius-topleft: 75px;
+	-moz-border-radius-topright:75px;
+	-moz-border-radius-bottomleft:75px;
+	-moz-border-radius-bottomright:75px;
+	-webkit-border-top-left-radius:75px;
+	-webkit-border-top-right-radius:75px;
+	-webkit-border-bottom-left-radius:75px;
+	-webkit-border-bottom-right-radius:75px;
+	border-top-left-radius:75px;
+	border-top-right-radius:75px;
+	border-bottom-left-radius:75px;
+	border-bottom-right-radius:75px;
+	float: left;
+	background-size: 100%;
+	width: 15%;
+	height: 22%;
+	position: absolute;
+    margin-left: 2%;
+    -moz-box-shadow: 3px 7px 20px #000000;
+	-webkit-box-shadow: 3px 7px 20px #000000;
+	box-shadow: 3px 7px 20px #000000;
+	background-repeat: no-repeat;
+}
+.borderMango
+{
+	-moz-border-radius-topleft: 45px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-bottomleft:0px;
+	-moz-border-radius-bottomright:47px;
+	-webkit-border-top-left-radius:45px;
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-bottom-left-radius:0px;
+	-webkit-border-bottom-right-radius:47px;
+	border-top-left-radius:45px;
+	border-top-right-radius:5px;
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius:47px;
+}
+.borderMango:hover
+{
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright:55px;
+	-moz-border-radius-bottomleft:54px;
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-top-left-radius:0px;
+	-webkit-border-top-right-radius:55px;
+	-webkit-border-bottom-left-radius:54px;
+	-webkit-border-bottom-right-radius:0px;
+	border-top-left-radius:0px;
+	border-top-right-radius:55px;
+	border-bottom-left-radius:54px;
+	border-bottom-right-radius:0px;
+	-webkit-filter: contrast(500%);
+	-moz-filter: contrast(500%);
+}
+#siteTitle
+{
+	width: 30%;
+	height:20%;
+	background: rgba(0,0,0, 0.6);
+	background-size: 100%;
+	background-image: url("..\\images\\title.png");
+	padding: 5% 5% 5% 5%;
+	margin-left: auto;
+	margin-right: auto;
+	-moz-box-shadow: 3px 7px 20px #000000;
+	-webkit-box-shadow: 3px 7px 20px #000000;
+	box-shadow: 3px 7px 20px #000000;
+}
+#siteTitle:hover
+{
+	-moz-border-radius-topleft: 75px;
+	-moz-border-radius-topright:75px;
+	-moz-border-radius-bottomleft:75px;
+	-moz-border-radius-bottomright:75px;
+	-webkit-border-top-left-radius:75px;
+	-webkit-border-top-right-radius:75px;
+	-webkit-border-bottom-left-radius:75px;
+	-webkit-border-bottom-right-radius:75px;
+	border-top-left-radius:75px;
+	border-top-right-radius:75px;
+	border-bottom-left-radius:75px;
+	border-bottom-right-radius:75px;
+}
+.blocks
+{
+	width: 20%;
+    height: 20%;
+    padding: 5% 5% 5% 5%;
+    margin-top: 2%;
+    margin-left: 2%;
+    float: left;
+    -moz-box-shadow: 3px 7px 20px #000000;
+	-webkit-box-shadow: 3px 7px 20px #000000;
+	box-shadow: 3px 7px 20px #000000;
+}
+.spacing
+{
+	padding: 2% 2% 2% 2%;
+ }
+#a1
+{
+	background: rgba(119,185,0, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\aboutme.png");
+}
+#a2
+{
+	background: rgba(243,178,0, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\resume.png");
+}
+#a3
+{
+	background: rgba(114,0,172, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\gitHubRepo.png");
+}
+#a4
+{
+	background: rgba(0,130,135, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\blog.png");
+}
+#a5
+{
+	background: rgba(0,216,204, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\contactMe.png");
+}
+#a6
+{
+	background: rgba(172,25,61, 0.7);
+	background-size: 100%;
+	background-image: url("..\\images\\usefullinks.png");
+}
+#aboutMe
+{
+	width: 60%;
+    height: 100%;
+    padding: 5% 5% 5% 5%;
+    margin-top: 2%;
+    margin-left: 5%;
+    background-color: rgba(0,0,0,0.5);
+}
+#map_canvas 
+{
+	width: 50%;
+    height: 50%;
+    margin-bottom: 0px;
+    position: absolute;
+}
+.footer
+{
+	color: white;
+	right:0px;
+	position: fixed;
+	bottom: 0px;
+	font-size: 10px;
+}
+@media all and (max-width: 500px)  {
+.blocks
+{
+	font-size: 50%;
+	clear:left;
+	margin-left: 35%;
+}
+#myPic
+{
+	height: 10%;
+}
+}
