@@ -1,0 +1,182 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 91.5vh;
+  background: url("../images/space.jpg") no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: black;
+  height: 100%;
+  width:22%;
+  z-index: 1;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.planet{
+  cursor: pointer;
+  color: white;
+}
+.stars{
+  background: url("../images/stars.png") no-repeat;
+  height: 100vh;
+}
+.donlon{
+  background: url("../images/donlon.png") no-repeat;
+  height: 200px;
+  width: 200px;
+  margin-top: 250%;
+  margin-left: 700%;
+}
+.enchai{
+  background: url("../images/enchai.png") no-repeat;
+  height: 200px;
+  width: 200px;
+  margin-left: 195%;
+  margin-top: 160%;
+}
+.sapir{
+  background: url("../images/sapir.png") no-repeat;
+  height: 200px;
+  width: 200px;
+  margin-left: 400%;
+  margin-top: 270%;
+}
+.jebing{
+  background: url("../images/jebing.png") no-repeat;
+  height: 150px;
+  width: 150px;
+  background-size: 100%;
+  margin-left: 250%;
+  margin-top:20%;
+}
+.lengaburu{
+  background: url("../images/lengaburu.png") no-repeat;
+  background-size: 100%;
+  height: 400px;
+  width: 400px;
+  margin-left: 150%;
+  margin-top: 50%;
+}
+.lerbin{
+  background: url("../images/lerbin.png") no-repeat;
+  height: 300px;
+  width: 300px;
+  background-size: 100%;
+  margin-left: 400%;
+  margin-top: 30%;
+}
+.pingasor{
+  background: url("../images/pingasor.png") no-repeat;
+  height: 250px;
+  width: 250px;
+  background-size: 100%;
+  margin-left: -10%;
+  margin-top: 230%;
+}
+#info{
+  height: 100%;
+}
+.planet_info{
+  background: url("../images/donlon.png") no-repeat;
+  height: 100px;
+  width: 100px;
+  background-position: center;
+}
+.space_pod{
+  background: url("../images/space_pod.png") no-repeat; 
+}
+.space_rocket{
+  background: url("../images/space_rocket.png") no-repeat;
+}
+.space_shuttle{
+  background: url("../images/space_shuttle.png") no-repeat;
+  background-size: 55%;
+}
+.space_ship{
+  background: url("../images/space_ship.png") no-repeat;
+  background-size: 75%;
+}
+.vehicle{
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: white;
+}
+.bottom{
+  vertical-align: bottom;
+}
+.top{
+  vertical-align: top;
+}
+.center{
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+.border{
+  border: 2px solid white;
+}
+.padding{
+  padding: 40px;
+}
+.find{
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.find:hover{
+  background-color: #4CAF50;
+}
+.vehicle[data-badge]:after {
+  content:attr(data-badge);
+  position: relative;
+  top: -8px;
+  right: -40px;
+  font-size: 45px;
+  background: #F44336;
+  color: black;
+  border-radius:20%;
+}
+.visit{
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px;
+}
+.visit:hover{
+  background-color: #4CAF50;
+}
+.planet_box_1{
+  border-top: 2px solid white;
+  border-bottom:2px solid white;
+  border-left:2px solid white;
+}
+.planet_box_2{
+  border-right: 2px solid white;
+  padding: 2px;
+}
