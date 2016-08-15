@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FINDING FALCON</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.css">
+  <link rel="stylesheet" href="styles/custom.css">
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/parallax.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">FINDING FALCONE</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Reset</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>  
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <table id="info">
+          <tr class="top">
+            <td colspan="100%" >
+              <div class="center border padding">First choose the planet from the right, then choose the vehicle from the panel</div>
+            </td>
+          </tr>
+          <tr class="top">
+            <td colspan="100%" >
+              <div class="center border">:::PLANET CLICKED:::</div>
+            </td>
+          </tr>
+          <tr class="top">
+            <td class="planet_box_1">
+              <div class="planet_info"></div>
+            </td>
+            <td colspan="75%" class="planet_box_2">
+              <div id="planet_info" class="center"><b>Donlon</b>, 300 megamiles from Lengaburu</div>
+              <div><div class="border visit">VISIT</div></div>
+            </td>
+          </tr>
+          <tr class="top">
+            <td colspan="100%" >
+              <div class="center border">:::PLANETS TO VISIT:::</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="100%">
+              <div class="border padding"></div>
+            </td>
+          </tr>
+          <tr class="top">
+            <td colspan="100%" >
+              <div class="center border">:::VEHICLES USED:::</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="100%">
+              <div class="border padding"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="100%" >
+              <div class="center border padding">TOTAL TIME TAKEN : 50</div>
+            </td>
+          </tr>
+          <tr class="bottom">
+          <td>
+            <div class="space_pod vehicle" data-badge="2"></div>
+          </td>
+          <td>
+            <div class="space_rocket vehicle" data-badge="1"></div>
+          </td>
+          <td>
+            <div class="space_ship vehicle" data-badge="0"></div>
+          </td>
+          <td>
+            <div class="space_shuttle vehicle" data-badge="2"></div>
+          </td>
+        </tr>
+        <tr class="bottom">
+          <td colspan="100%" >
+            <div class="center border find">:::FIND FALCONE:::</div>
+          </td>
+        </tr>
+      </table>
+      </div>
+      <div class="col-sm-8 text-left">
+        <ul id="space">
+          <li class="layer" data-depth="0.05"><div class="stars"></div></li>
+          <li class="layer" data-depth="0.10"><div onclick="planet_details('lengaburu')" class="lengaburu planet"></div></li>
+          <li class="layer" data-depth="0.30"><div onclick="planet_details('sapir')" class="sapir planet"><h1>-</h1></div></li>
+          <li class="layer" data-depth="0.40"><div onclick="planet_details('jebing')" class="jebing planet"><h1>-</h1></div></li>
+          <li class="layer" data-depth="0.60"><div onclick="planet_details('donlon')" class="donlon planet"><h1>-</h1></div></li>
+          <li class="layer" data-depth="0.80"><div onclick="planet_details('lerbin')" class="lerbin planet"><h1>-</h1></div></li>
+          <li class="layer" data-depth="0.90"><div onclick="planet_details('enchai')" class="enchai planet"><h1>-</h1></div></li>
+          <li class="layer" data-depth="1.00"><div onclick="planet_details('pingasor')" class="pingasor planet"><h1>-</h1></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+    <p><a href="mailto:jona.mailbox@gmail.com">jona.mailbox@gmail.com</a></p>
+  </footer>
+</body>
+</html>
