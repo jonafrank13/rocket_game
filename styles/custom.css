@@ -143,17 +143,21 @@ footer {
 .space_pod{
   background: url("../images/space_pod.png") no-repeat; 
 }
+
 .space_rocket{
   background: url("../images/space_rocket.png") no-repeat;
 }
+
 .space_shuttle{
   background: url("../images/space_shuttle.png") no-repeat;
   background-size: 55%;
 }
+
 .space_ship{
   background: url("../images/space_ship.png") no-repeat;
   background-size: 75%;
 }
+
 .vehicle{
   width: 100px;
   height: 100px;
@@ -162,6 +166,7 @@ footer {
   cursor: pointer;
   background-color: white;
 }
+
 .bottom{
   vertical-align: bottom;
 }
