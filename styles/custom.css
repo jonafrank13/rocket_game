@@ -79,18 +79,32 @@ footer {
   background-image: url("../images/pingasor.png");
 }
 
-.planet_1{
+.planet_d{  
+  height: 300px;
+  width: 300px;
+  margin-left: 140%;
+  margin-top: 98%;
+}
+
+.planet_0{
   height: 200px;
   width: 200px;
   margin-top: 250%;
   margin-left: 450%;
 }
 
-.planet_2{
+.planet_1{ 
   height: 150px;
   width: 150px;
-  margin-left: 30%;
-  margin-top: 50%;
+  margin-left: 320%;
+  margin-top:60%;
+}
+
+.planet_2{
+  height: 250px;
+  width: 250px;
+  margin-left: 340%;
+  margin-top: 30%;
 }
 
 .planet_3{
@@ -101,31 +115,17 @@ footer {
 }
 
 .planet_4{
-  height: 150px;
-  width: 150px;
-  margin-left: 320%;
-  margin-top:60%;
-}
-
-.planet_5{  
-  height: 300px;
-  width: 300px;
-  margin-left: 140%;
-  margin-top: 98%;
-}
-
-.planet_6{
-  height: 300px;
-  width: 300px;
-  margin-left: 280%;
-  margin-top: 30%;
-}
-
-.planet_7{
   height: 400px;
   width: 400px;
   margin-left: -30%;
-  margin-top: 120%;
+  margin-top: 100%;
+}
+
+.planet_5{
+  height: 150px;
+  width: 150px;
+  margin-left: 30%;
+  margin-top: 50%;
 }
 
 #info{
@@ -193,7 +193,7 @@ footer {
 .vehicle[count]:after {
   content:attr(count);
   position: relative;
-  top: 37px;
+  top: 10px;
   right: -5px;
   font-size: 20px;
   width: 30px;
@@ -222,6 +222,18 @@ footer {
   font-size: 20px;
   width: 30px;
   background: #F44336;
+  color: black;
+  border-radius: 100%;
+  display: block;
+}
+.vehicle span[used]:after {
+  content:attr(used);
+  position: relative;
+  top: -60px;
+  right: -38px;
+  font-size: 20px;
+  width: 30px;
+  background: #4CAF50;
   color: black;
   border-radius: 100%;
   display: block;

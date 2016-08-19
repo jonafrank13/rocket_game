@@ -12,6 +12,7 @@
   <script src="scripts/bootstrap.js"></script>
   <script src="scripts/parallax.js"></script>
   <script src="scripts/jquery.nicescroll.js"></script>
+  <script src="scripts/vue.js"></script>
   <script src="scripts/main.js"></script>
 </head>
 <body>
@@ -66,42 +67,14 @@
               <div class="center border">:::VEHICLES AVAILABLE:::</div>
             </td>
           </tr>
-          <tr class="bottom">
-            <td>
-              <div class="space_pod vehicle" count="2" max-distance="100" title="Space pod" ><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_rocket vehicle" count="1" max-distance="200" title="Space Rocket"><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_ship vehicle" count="0" max-distance="300" title="Space Ship"><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_shuttle vehicle" count="2" max-distance="400" title="Space Shuttle"><span max-speed="2"></span></div>
-            </td>
+          <tr id="vehicles" class="bottom">
+            <td v-for="vehicle in vehicles">
+              <div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle" onclick="use_vehicle({{vehicle.id}})" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div>
+            </td> 
           </tr>
           <tr>
             <td colspan="100%" >
               <div class="center border padding">TOTAL TIME TAKEN : 0</div>
-            </td>
-          </tr>
-          <tr class="top">
-            <td colspan="100%" >
-              <div class="center border">:::VEHICLES USED:::</div>
-            </td>
-          </tr>
-          <tr>
-             <td>
-              <div class="space_pod vehicle" count="2" max-distance="100" title="Space pod"><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_rocket vehicle" count="1" max-distance="200" title="Space Rocket"><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_ship vehicle" count="0" max-distance="300" title="Space Ship"><span max-speed="2"></span></div>
-            </td>
-            <td>
-              <div class="space_shuttle vehicle" count="2" max-distance="400" title="Space Shuttle"><span max-speed="2"></span></div>
             </td>
           </tr>
           <tr class="bottom">
@@ -111,16 +84,11 @@
           </tr>
         </table>
       </div>
-      <div class="col-sm-8 text-left">
+      <div id="space_box" class="col-sm-8 text-left">
         <ul id="space">
-          <li class="layer" data-depth="0.05"><div class="stars"></div></li>
-          <li class="layer" data-depth="0.10"><div onclick="planet_details('lengaburu')" max-distance="200" title="Lengaburu, Home planet" class="lengaburu planet_5 planet"></div></li>
-          <li class="layer" data-depth="0.30"><div onclick="planet_details('sapir')" max-distance="200" title="Sapir, 300 megamiles from Lengaburu" class="sapir planet planet_3"></div></li>
-          <li class="layer" data-depth="0.40"><div onclick="planet_details('jebing')" max-distance="200" title="Jebing, 400 megamiles from Lengaburu" class="jebing planet planet_4"></div></li>
-          <li class="layer" data-depth="0.60"><div onclick="planet_details('donlon')" max-distance="200" title="Donlon, 800 megamiles from Lengaburu" class="donlon planet planet_1"></div></li>
-          <li class="layer" data-depth="0.80"><div onclick="planet_details('lerbin')" max-distance="200" title="Lerbin, 700 megamiles from Lengaburu" class="lerbin planet planet_6"></div></li>
-          <li class="layer" data-depth="0.90"><div onclick="planet_details('pingasor')" max-distance="200" title="Pingasor, 350 megamiles from Lengaburu" class="pingasor planet planet_7"></div></li>
-          <li class="layer" data-depth="1.00"><div onclick="planet_details('enchai')" max-distance="200" title="Enchai, 600 megamiles from Lengaburu" class="enchai planet planet_2"></div></li>
+          <li class="layer" data-depth="0.10"><div class="stars"></div></li>
+          <li class="layer" data-depth="0.20"><div max-distance="0" title="Lengaburu, Home planet" class="lengaburu planet_d planet"></div></li>
+          <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div onclick="planet_details('{{planet.id}}')" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
         </ul>
       </div>
     </div>
