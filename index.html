@@ -4,6 +4,8 @@
   <title>FINDING FALCON</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles/bootstrap.css">
   <link rel="stylesheet" href="styles/custom.css">
   <script src="scripts/jquery.js"></script>
@@ -46,20 +48,6 @@
           </tr>
           <tr class="top">
             <td colspan="100%" >
-              <div class="center border">:::PLANET CLICKED:::</div>
-            </td>
-          </tr>
-          <tr class="top">
-            <td class="planet_box_1">
-              <div class="lengaburu planet planet_info"></div>
-            </td>
-            <td colspan="75%" class="planet_box_2">
-              <div id="planet_info" class="center"><b>Lengaburu</b>, your home planet</div>
-              <div><div class="border visit">VISIT</div></div>
-            </td>
-          </tr>
-          <tr class="top">
-            <td colspan="100%" >
               <div class="center border">:::PLANETS TO VISIT:::</div>
             </td>
           </tr>
@@ -80,16 +68,16 @@
           </tr>
           <tr class="bottom">
             <td>
-              <div class="space_pod vehicle" data-badge="2"></div>
+              <div class="space_pod vehicle" count="2" max-distance="100" title="Space pod" ><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_rocket vehicle" data-badge="1"></div>
+              <div class="space_rocket vehicle" count="1" max-distance="200" title="Space Rocket"><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_ship vehicle" data-badge="0"></div>
+              <div class="space_ship vehicle" count="0" max-distance="300" title="Space Ship"><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_shuttle vehicle" data-badge="2"></div>
+              <div class="space_shuttle vehicle" count="2" max-distance="400" title="Space Shuttle"><span max-speed="2"></span></div>
             </td>
           </tr>
           <tr>
@@ -103,17 +91,17 @@
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="space_pod vehicle" data-badge="2"></div>
+             <td>
+              <div class="space_pod vehicle" count="2" max-distance="100" title="Space pod"><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_rocket vehicle" data-badge="1"></div>
+              <div class="space_rocket vehicle" count="1" max-distance="200" title="Space Rocket"><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_ship vehicle" data-badge="0"></div>
+              <div class="space_ship vehicle" count="0" max-distance="300" title="Space Ship"><span max-speed="2"></span></div>
             </td>
             <td>
-              <div class="space_shuttle vehicle" data-badge="2"></div>
+              <div class="space_shuttle vehicle" count="2" max-distance="400" title="Space Shuttle"><span max-speed="2"></span></div>
             </td>
           </tr>
           <tr class="bottom">
@@ -126,13 +114,13 @@
       <div class="col-sm-8 text-left">
         <ul id="space">
           <li class="layer" data-depth="0.05"><div class="stars"></div></li>
-          <li class="layer" data-depth="0.10"><div onclick="planet_details('lengaburu')" class="lengaburu planet_5 planet"></div></li>
-          <li class="layer" data-depth="0.30"><div onclick="planet_details('sapir')" class="sapir planet planet_3"><h1></h1></div></li>
-          <li class="layer" data-depth="0.40"><div onclick="planet_details('jebing')" class="jebing planet planet_4"><h1></h1></div></li>
-          <li class="layer" data-depth="0.60"><div onclick="planet_details('donlon')" class="donlon planet planet_1"><h1></h1></div></li>
-          <li class="layer" data-depth="0.80"><div onclick="planet_details('lerbin')" class="lerbin planet planet_6"><h1></h1></div></li>
-          <li class="layer" data-depth="0.90"><div onclick="planet_details('enchai')" class="enchai planet planet_2"><h1></h1></div></li>
-          <li class="layer" data-depth="1.00"><div onclick="planet_details('pingasor')" class="pingasor planet planet_7"><h1></h1></div></li>
+          <li class="layer" data-depth="0.10"><div onclick="planet_details('lengaburu')" max-distance="200" title="Lengaburu, Home planet" class="lengaburu planet_5 planet"></div></li>
+          <li class="layer" data-depth="0.30"><div onclick="planet_details('sapir')" max-distance="200" title="Sapir, 300 megamiles from Lengaburu" class="sapir planet planet_3"></div></li>
+          <li class="layer" data-depth="0.40"><div onclick="planet_details('jebing')" max-distance="200" title="Jebing, 400 megamiles from Lengaburu" class="jebing planet planet_4"></div></li>
+          <li class="layer" data-depth="0.60"><div onclick="planet_details('donlon')" max-distance="200" title="Donlon, 800 megamiles from Lengaburu" class="donlon planet planet_1"></div></li>
+          <li class="layer" data-depth="0.80"><div onclick="planet_details('lerbin')" max-distance="200" title="Lerbin, 700 megamiles from Lengaburu" class="lerbin planet planet_6"></div></li>
+          <li class="layer" data-depth="0.90"><div onclick="planet_details('pingasor')" max-distance="200" title="Pingasor, 350 megamiles from Lengaburu" class="pingasor planet planet_7"></div></li>
+          <li class="layer" data-depth="1.00"><div onclick="planet_details('enchai')" max-distance="200" title="Enchai, 600 megamiles from Lengaburu" class="enchai planet planet_2"></div></li>
         </ul>
       </div>
     </div>

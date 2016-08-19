@@ -7,19 +7,21 @@
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
   height: 91.5vh;
-  background: url("../images/space.jpg") no-repeat;
-  background-size: 100%;
   overflow: hidden;
+  background-size: 100%;
+  background: url("../images/space.jpg") no-repeat;
+  cursor: url(../images/crosshairs.png),default;
 }
 
 /* Set gray background color and 100% height */
 .sidenav {
-  padding-top: 20px;
-  background-color: black;
-  height: 100%;
   width:29%;
   z-index: 1;
+  height: 100%;
+  cursor: default;
+  padding-top: 20px;
   overflow-y: scroll;
+  background-color: black;
 }
 
 /* Set black background color, white text and some padding */
@@ -44,7 +46,7 @@ footer {
 
 .planet{
   color: white;
-  cursor: pointer;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -62,22 +64,18 @@ footer {
 }
 
 .jebing{
-  background-size: 100%;
   background-image: url("../images/jebing.png");
 }
 
 .lengaburu{
-  background-size: 100%;
   background-image: url("../images/lengaburu.png");
 }
 
 .lerbin{
-  background-size: 100%;
   background-image: url("../images/lerbin.png");
 }
 
 .pingasor{
-  background-size: 100%;
   background-image: url("../images/pingasor.png");
 }
 
@@ -89,45 +87,45 @@ footer {
 }
 
 .planet_2{
-  height: 200px;
-  width: 200px;
-  margin-left: 120%;
-  margin-top: 160%;
+  height: 150px;
+  width: 150px;
+  margin-left: 30%;
+  margin-top: 50%;
 }
 
 .planet_3{
-  height: 200px;
-  width: 200px;
-  margin-left: 300%;
-  margin-top: 250%;
+  height: 120px;
+  width: 120px;
+  margin-left: 450%;
+  margin-top: 450%;
 }
 
 .planet_4{
   height: 150px;
   width: 150px;
-  margin-left: 270%;
-  margin-top:20%;
+  margin-left: 320%;
+  margin-top:60%;
 }
 
 .planet_5{  
-  height: 400px;
-  width: 400px;
-  margin-left: 110%;
-  margin-top: 50%;
+  height: 300px;
+  width: 300px;
+  margin-left: 140%;
+  margin-top: 98%;
 }
 
 .planet_6{
   height: 300px;
   width: 300px;
-  margin-left: 300%;
+  margin-left: 280%;
   margin-top: 30%;
 }
 
 .planet_7{
-  height: 250px;
-  width: 250px;
-  margin-left: -10%;
-  margin-top: 230%;
+  height: 400px;
+  width: 400px;
+  margin-left: -30%;
+  margin-top: 120%;
 }
 
 #info{
@@ -192,35 +190,41 @@ footer {
 .find:hover{
   background-color: #4CAF50;
 }
-.vehicle[data-badge]:after {
-  content:attr(data-badge);
+.vehicle[count]:after {
+  content:attr(count);
   position: relative;
-  top: -8px;
-  right: -75px;
+  top: 37px;
+  right: -5px;
+  font-size: 20px;
+  width: 30px;
+  background: #03A9F4;
+  color: black;
+  border-radius: 100%;
+  display: block;
+}
+.vehicle[max-distance]:before {
+  content: attr(max-distance);
+  position: relative;
+  top: 90px;
+  right: -35px;
+  font-size: 15px;
+  width: 30px;
+  background: #FF9800;
+  color: black;
+  border-radius: 30%;
+  display: block;
+}
+.vehicle span[max-speed]:before {
+  content:attr(max-speed);
+  position: relative;
+  top: 65px;
+  right: -65px;
   font-size: 20px;
   width: 30px;
   background: #F44336;
   color: black;
-  border-radius:100%;
+  border-radius: 100%;
   display: block;
-}
-.visit{
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  margin: 20px;
-}
-.visit:hover{
-  background-color: #4CAF50;
-}
-.planet_box_1{
-  border-top: 2px solid white;
-  border-bottom:2px solid white;
-  border-left:2px solid white;
-}
-.planet_box_2{
-  border-right: 2px solid white;
-  padding: 2px;
 }
 .planet_visit{
   display: inline-block;
