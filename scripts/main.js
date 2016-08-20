@@ -6,16 +6,6 @@ $( document ).ready(function(){
     $('[max-distance]').tooltip();
 });
 
-function planet_details(planet){
-	console.log(planet+' clicked');
-}
-
-function use_vehicle(id){
-	console.log(id);
-	vehicles.vehicles[id].used += 1;
-	vehicles.vehicles[id].used = (vehicles.vehicles[id].used > vehicles.vehicles[id].total_no) ? vehicles.vehicles[id].total_no : vehicles.vehicles[id].used;
-}
-
 var vehicles = {"vehicles":[
   {
     "name": "Space pod",
@@ -74,7 +64,11 @@ var vehicle_view = new Vue(
 							{
   								el   		: 	'#vehicles',
   								data 		: 	vehicles,
-  								init		: 	function(){		Object.keys(vehicles.vehicles).forEach( function (vehicle,index){	vehicles.vehicles[index].id = index;vehicles.vehicles[index].used = 0;	} );	}
+  								init		: 	function(){		Object.keys(vehicles.vehicles).forEach( function (vehicle,index){	vehicles.vehicles[index].id = index;vehicles.vehicles[index].used = 0;	} );	},
+                  methods :   {
+                                use_vehicle   : function(vehicle){ vehicle.used = ((vehicle.used+1) > vehicle.total_no) ? vehicle.total_no : ++vehicle.used; },
+                                remove_vehicle: function(vehicle){ vehicle.used = ((vehicle.used-1) < 0) ? 0 : --vehicle.used; }
+                              }
 							}
 						);
 
@@ -83,6 +77,9 @@ var planet_view = new Vue(
   								el   		: 	'#space_box',
   								data 		: 	planets,
   								init		: 	function(){		Object.keys(planets.planets).forEach( function (planet,index){	planets.planets[index].id = index;	} );	},
-  								ready		: 	function(){		var parallax = new Parallax(document.getElementById('space'));		}
+  								ready		: 	function(){		var parallax = new Parallax(document.getElementById('space'));		},
+                  methods :   {   
+                                planet_details : function(planet){  console.log(planet+' clicked'); }   
+                              }
 							}
 						);

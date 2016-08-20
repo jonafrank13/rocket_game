@@ -68,8 +68,8 @@
             </td>
           </tr>
           <tr id="vehicles" class="bottom">
-            <td v-for="vehicle in vehicles">
-              <div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle" onclick="use_vehicle({{vehicle.id}})" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div>
+            <td v-for="vehicle in vehicles" v-cloak>
+              <span v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
             </td> 
           </tr>
           <tr>
@@ -84,11 +84,11 @@
           </tr>
         </table>
       </div>
-      <div id="space_box" class="col-sm-8 text-left">
+      <div id="space_box" class="col-sm-8 text-left" v-cloak>
         <ul id="space">
           <li class="layer" data-depth="0.10"><div class="stars"></div></li>
           <li class="layer" data-depth="0.20"><div max-distance="0" title="Lengaburu, Home planet" class="lengaburu planet_d planet"></div></li>
-          <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div onclick="planet_details('{{planet.id}}')" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
+          <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div v-on:click="planet_details(planet.id)" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
         </ul>
       </div>
       <!-- Vehicle info content-->
