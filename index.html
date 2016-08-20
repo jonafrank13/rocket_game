@@ -64,7 +64,7 @@
           </tr>
           <tr class="top">
             <td colspan="100%" >
-              <div class="center border">:::VEHICLES AVAILABLE:::</div>
+              <div class="center border">:::VEHICLES AVAILABLE:::<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-question-sign help"></span></a></div>
             </td>
           </tr>
           <tr id="vehicles" class="bottom">
@@ -91,6 +91,24 @@
           <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div onclick="planet_details('{{planet.id}}')" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
         </ul>
       </div>
+      <!-- Vehicle info content-->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Vehicle model</h4>
+            </div>
+            <div class="modal-body">
+              <img class="vehicle-info" src="images\info.png">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Vehicle info content-->
     </div>
   </div>
   <footer class="container-fluid text-center">

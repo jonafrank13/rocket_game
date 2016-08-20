@@ -190,6 +190,13 @@ footer {
 .find:hover{
   background-color: #4CAF50;
 }
+.help{
+  float: right;
+  margin: 2px;
+}
+.vehicle-info{
+  width: 100%;
+}
 .vehicle[count]:after {
   content:attr(count);
   position: relative;
