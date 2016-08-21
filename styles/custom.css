@@ -6,7 +6,7 @@
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
-  height: 91.5vh;
+  height: 91.3vh;
   overflow: hidden;
   background-size: 100%;
   background: url("../images/space.jpg") no-repeat;
@@ -15,7 +15,7 @@
 
 /* Set gray background color and 100% height */
 .sidenav {
-  width:29%;
+  width:500px;
   z-index: 1;
   height: 100%;
   cursor: default;
@@ -31,17 +31,27 @@ footer {
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
-@media screen {
-  .sidenav {
-    padding: 15px;
-  }
-
-  .row.content {background-repeat: repeat;}
-}
-
-@media screen and (min-width: 900px) {
+@media screen and (min-height:900px) {
   .planet_3{
     margin-top:550% !important;
+  }
+}
+
+@media screen and (max-height:800px) {
+  .row.content {
+    height: 89.2vh;
+  }
+}
+
+@media screen and (max-width:1500px) {
+  .sidenav {
+    width:31%;
+  }
+  .sidenav:hover {
+    width: 100%;
+  }
+  .sidenav:hover~#vehicles>td{
+    display: inline;
   }
 }
 
@@ -266,14 +276,14 @@ footer {
 }
 .use_vehicle:before{
   top: 70px;
-  right: 58px;
+  right: 52px;
   font-size: 30px;
   position: relative;
   cursor: pointer;
 }
 .remove_vehicle:before{
   top: -65px;
-  right: -27px;
+  right: -35px;
   font-size: 30px;
   position: relative;
   cursor: pointer;

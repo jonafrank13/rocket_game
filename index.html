@@ -77,7 +77,7 @@
             </td>
           </tr>
           <tr id="vehicles" class="bottom">
-            <td v-for="vehicle in vehicles" v-cloak>
+            <td v-for="vehicle in vehicles" colspan="25%" v-cloak>
               <span v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle {{disable_vehicle(vehicle)}}" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
             </td> 
           </tr>

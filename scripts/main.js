@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $("#info").parent().niceScroll();
-  $("html").niceScroll();
   vehicle_view.$mount('#vehicles');
   planet_view.$mount('#space_box');
   visit_view.$mount('#visit_list');
