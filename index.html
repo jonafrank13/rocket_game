@@ -54,27 +54,36 @@
           </tr>
           <tr>
             <td colspan="100%">
-              <div class="visit_list">
-                <div class="border planet_visit" id="visit_1"></div>
-                <div class="border planet_visit" id="visit_2"></div>
-                <div class="border planet_visit" id="visit_3"></div>
-                <div class="border planet_visit" id="visit_4"></div>
+              <div id="visit_limit_alert" class="alert alert-danger">
+                <strong>Sorry!</strong> Only 4 planets can be visited at a time
+              </div>
+              <div id="visit_repeat_alert" class="alert alert-warning">
+                <strong>Hey!</strong> You are already visiting that planet
+              </div>
+              <div id="visit_list" class="visit_list" v-cloak>
+                <div v-for="visit in visit_list" class="border planet_visit {{visit.name.toLowerCase()}} planet" max-distance="{{visit.distance}}" title="{{visit.name}}, {{visit.distance}} megamiles"><span v-if="$index == (visit_list.length-1)" v-on:click="dont_visit(visit,$event)" class="glyphicon glyphicon-remove-sign dont_visit"></span><span class="glyphicon glyphicon-remove-sign dont_visit disable" v-else></span></div>
               </div>
             </td>
           </tr>
           <tr class="top">
             <td colspan="100%" >
               <div class="center border">:::VEHICLES AVAILABLE:::<a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-question-sign help"></span></a></div>
+              <div id="cannot_remove_alert" class="alert alert-danger">
+                <strong>Sorry!</strong> Only the last selected vehicle can be removed
+              </div>
+              <div id="choose_planet_alert" class="alert alert-warning">
+                <strong>Hey!</strong>Choose a vehicle before choosing a planet!
+              </div>
             </td>
           </tr>
           <tr id="vehicles" class="bottom">
             <td v-for="vehicle in vehicles" v-cloak>
-              <span v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
+              <span v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle {{disable_vehicle(vehicle)}}" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
             </td> 
           </tr>
           <tr>
             <td colspan="100%" >
-              <div class="center border padding">TOTAL TIME TAKEN : 0</div>
+              <div id="total_time" class="center border padding" v-cloak>TOTAL TIME TAKEN : {{total_time}}</div>
             </td>
           </tr>
           <tr class="bottom">
@@ -88,7 +97,7 @@
         <ul id="space">
           <li class="layer" data-depth="0.10"><div class="stars"></div></li>
           <li class="layer" data-depth="0.20"><div max-distance="0" title="Lengaburu, Home planet" class="lengaburu planet_d planet"></div></li>
-          <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div v-on:click="planet_details(planet.id)" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
+          <li v-for="planet in planets" class="layer" data-depth="0.{{planet.id+2}}0"><div v-on:click="visit_planet(planet)" max-distance="{{planet.distance}}" title="{{planet.name}}, {{planet.distance}} megamiles" class="{{planet.name.toLowerCase()}} planet_{{planet.id}} planet"></div></li>
         </ul>
       </div>
       <!-- Vehicle info content-->
