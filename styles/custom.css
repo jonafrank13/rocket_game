@@ -48,7 +48,7 @@ footer {
     width:31%;
   }
   .sidenav:hover {
-    width: 100%;
+    width: 500px;
   }
   .sidenav:hover~#vehicles>td{
     display: inline;

@@ -61,7 +61,7 @@
                 <strong>Hey!</strong> You are already visiting that planet
               </div>
               <div id="visit_list" class="visit_list" v-cloak>
-                <div v-for="visit in visit_list" class="border planet_visit {{visit.name.toLowerCase()}} planet" max-distance="{{visit.distance}}" title="{{visit.name}}, {{visit.distance}} megamiles"><span v-if="$index == (visit_list.length-1)" v-on:click="dont_visit(visit,$event)" class="glyphicon glyphicon-remove-sign dont_visit"></span><span class="glyphicon glyphicon-remove-sign dont_visit disable" v-else></span></div>
+                <div v-for="visit in visit_list" onmouseover="$(this).tooltip()" class="border planet_visit {{visit.name.toLowerCase()}} planet" max-distance="{{visit.distance}}" title="{{visit.name}}, {{visit.distance}} megamiles"><span v-if="$index == (visit_list.length-1)" v-on:click="dont_visit(visit,$event)" class="glyphicon glyphicon-remove-sign dont_visit"></span><span class="glyphicon glyphicon-remove-sign dont_visit disable" v-else></span></div>
               </div>
             </td>
           </tr>
@@ -78,7 +78,7 @@
           </tr>
           <tr id="vehicles" class="bottom">
             <td v-for="vehicle in vehicles" colspan="25%" v-cloak>
-              <span v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle {{disable_vehicle(vehicle)}}" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
+              <span v-if="disable_vehicle(vehicle) == ''" v-on:click="use_vehicle(vehicle)" class="glyphicon glyphicon-plus-sign use_vehicle"></span><span class="glyphicon glyphicon-plus-sign use_vehicle" v-else></span><div title="{{vehicle.name}}" class="{{vehicle.name.toLowerCase().replace(' ','_')}} vehicle {{disable_vehicle(vehicle)}}" count="{{vehicle.total_no}}" max-distance="{{vehicle.max_distance}}"><span max-speed="{{vehicle.speed}}" used="{{vehicle.used}}"></span></div><span v-on:click="remove_vehicle(vehicle)" class="glyphicon glyphicon-minus-sign remove_vehicle"></span>
             </td> 
           </tr>
           <tr>
