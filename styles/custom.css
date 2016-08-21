@@ -15,8 +15,8 @@
 
 /* Set gray background color and 100% height */
 .sidenav {
-  width:500px;
   z-index: 1;
+  width:500px;
   height: 100%;
   cursor: default;
   padding-top: 20px;
@@ -30,19 +30,21 @@ footer {
   color: white;
 }
 
-/* On small screens, set height to 'auto' for sidenav and grid */
+/* Spread out planets a little more in larger screens */
 @media screen and (min-height:900px) {
   .planet_3{
     margin-top:550% !important;
   }
 }
 
+/* Set view height appropriately for corresponding resolutions */
 @media screen and (max-height:800px) {
   .row.content {
     height: 89.2vh;
   }
 }
 
+/* For extremely small screens */
 @media screen and (max-width:1500px) {
   .sidenav {
     width:31%;
@@ -50,15 +52,69 @@ footer {
   .sidenav:hover {
     width: 500px;
   }
-  .sidenav:hover~#vehicles>td{
-    display: inline;
-  }
 }
 
+/* Do not show Vue elements if not compiled */
 [v-cloak] {
   display: none;
 }
 
+/* Common classes */
+.alert{
+  display:none;
+}
+
+.bottom{
+  vertical-align: bottom;
+}
+.top{
+  vertical-align: top;
+}
+
+.center{
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+.border{
+  border: 2px solid white;
+  margin-bottom: 10px;
+}
+
+.padding{
+  padding: 40px;
+}
+
+.find{
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.find:hover{
+  background-color: #4CAF50;
+}
+
+.help{
+  float: right;
+  margin: 2px;
+}
+
+#info{
+  height: 100%;
+  table-layout: fixed;
+}
+
+.planet_info{
+  width : 100px;
+  height :100px;
+}
+
+.visit_list{
+  padding: 5px
+}
+
+/* SPACE SIMULATION CLASSES */
 .stars{
   height: 100vh;
   background-repeat: no-repeat;
@@ -149,16 +205,6 @@ footer {
   margin-top: 50%;
 }
 
-#info{
-  height: 100%;
-  table-layout: fixed;
-}
-
-.planet_info{
-  width : 100px;
-  height :100px;
-}
-
 .space_pod{
   background: url("../images/space_pod.png") no-repeat; 
 }
@@ -185,38 +231,10 @@ footer {
   background-color: white;
 }
 
-.bottom{
-  vertical-align: bottom;
-}
-.top{
-  vertical-align: top;
-}
-.center{
-  text-align: center;
-  margin-top: 20px;
-  color: white;
-}
-.border{
-  border: 2px solid white;
-  margin-bottom: 10px;
-}
-.padding{
-  padding: 40px;
-}
-.find{
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-.find:hover{
-  background-color: #4CAF50;
-}
-.help{
-  float: right;
-  margin: 2px;
-}
 .vehicle-info{
   width: 100%;
 }
+
 .vehicle[count]:after {
   content:attr(count);
   position: relative;
@@ -229,6 +247,7 @@ footer {
   border-radius: 100%;
   display: block;
 }
+
 .vehicle[max-distance]:before {
   content: attr(max-distance);
   position: relative;
@@ -241,6 +260,7 @@ footer {
   border-radius: 30%;
   display: block;
 }
+
 .vehicle span[max-speed]:before {
   content:attr(max-speed);
   position: relative;
@@ -253,6 +273,7 @@ footer {
   border-radius: 100%;
   display: block;
 }
+
 .vehicle span[used]:after {
   content:attr(used);
   position: relative;
@@ -265,15 +286,14 @@ footer {
   border-radius: 100%;
   display: block;
 }
+
 .planet_visit{
   display: inline-block;
   margin: 5px;
   height:100px;
   width: 100px;
 }
-.visit_list{
-  padding: 5px
-}
+
 .use_vehicle:before{
   top: 70px;
   right: 52px;
@@ -281,6 +301,7 @@ footer {
   position: relative;
   cursor: pointer;
 }
+
 .remove_vehicle:before{
   top: -65px;
   right: -35px;
@@ -288,9 +309,7 @@ footer {
   position: relative;
   cursor: pointer;
 }
-.alert{
-  display:none;
-}
+
 .disable{
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -298,6 +317,7 @@ footer {
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+
 .dont_visit:before{
   font-size: 30px;
   position: relative;
