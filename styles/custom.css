@@ -44,13 +44,90 @@ footer {
   }
 }
 
-/* For extremely small screens */
-@media screen and (max-width:1500px) {
-  .sidenav {
-    width:31%;
+@media screen and (min-width: 500px) and (max-width:1500px) {
+  #info{
+    width: 100%;
   }
-  .sidenav:hover {
-    width: 500px;
+  .sidenav {
+    width:30%;
+    float: left;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width:500px) {
+  #info{
+    width: 100%;
+  }
+  .help{
+    float: none !important;
+  }
+  .padding{
+    padding: 5px !important;
+  }
+  .sidenav {
+    width:40%;
+    float: left;
+  }
+  #vehicles>td{
+    display: table-row;
+  }
+  .layer{
+    position: absolute;
+  }
+  .vehicle{
+    margin-left: 18%;
+  }
+  .remove_vehicle:before{
+    right: -60px !important;
+  }
+  .use_vehicle:before {
+    left:-25px;
+  }
+  .planet{
+    width: 150px !important;
+    height: 150px !important;
+    margin-left: 90% !important;
+  }
+  .planet_d{
+    margin-top: -90% !important;
+    transform: rotate(180deg);
+  }
+  .planet_0{
+    margin-top: 60% !important;
+    margin-left: 235% !important;
+    height: 70px !important;
+    width: 70px !important;
+  }
+  .planet_1{
+    margin-top: 185% !important;
+    margin-left: 235% !important;
+    height: 70px !important;
+    width: 70px !important;
+  }
+  .planet_2{
+    margin-top: 300% !important;
+    margin-left: 235% !important;
+    height: 70px !important;
+    width: 70px !important;
+  }
+  .planet_3{
+    margin-top: 290% !important;
+    margin-left: 150% !important;
+    height: 100px !important;
+    width: 100px !important;
+  }
+  .planet_4{
+    margin-top: 245% !important;
+  }
+  .planet_5{
+    margin-top: 320% !important;
+  }
+  .planet_visit{
+    height: 100px !important;
+    width: 100px !important;
+    position: relative;
+    left: -85%;
   }
 }
 
