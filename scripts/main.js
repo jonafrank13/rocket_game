@@ -109,7 +109,7 @@ var planet_view = new Vue({
         });
     },
     ready: function() {
-      if (navigator.userAgent.match(/ipad|iphone|ipod|android/i)) {
+      if (!navigator.userAgent.match(/ipad|iphone|ipod|android/i)) {
         new Parallax(document.getElementById('space'));
       }
     },
