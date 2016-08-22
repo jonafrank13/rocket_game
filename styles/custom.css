@@ -114,6 +114,14 @@ footer {
   padding: 5px
 }
 
+.contact_info>span{
+  float : left
+}
+
+.modal{
+  cursor: default;
+}
+
 /* SPACE SIMULATION CLASSES */
 .stars{
   height: 100vh;

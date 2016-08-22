@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    if (navigator.userAgent.match(/ipad|iphone|ipod|android/i)) {
-        alert("Not recommended for mobile devices");
-    }
     $("#info").parent().niceScroll();
     vehicle_view.$mount('#vehicles');
     planet_view.$mount('#space_box');
@@ -10,7 +7,7 @@ $(document).ready(function() {
     $('[max-distance]').tooltip();
 });
 
-var game_modal = {
+var game_model = {
     "vehicles": [{
         "name": "Space pod",
         "total_no": 2,
@@ -56,8 +53,8 @@ var game_modal = {
 
 function get_total_used_vehicles() {
     var total_used = 0;
-    Object.keys(game_modal.vehicles).forEach(function(index) {
-        total_used += game_modal.vehicles[index].used;
+    Object.keys(game_model.vehicles).forEach(function(index) {
+        total_used += game_model.vehicles[index].used;
     });
     return total_used;
 }
@@ -71,28 +68,29 @@ function show_alert(msg_key) {
 
 var vehicle_view = new Vue({
     el: '#vehicles',
-    data: game_modal,
+    data: game_model,
     init: function() {
-        Object.keys(game_modal.vehicles).forEach(function(index) {
-            game_modal.vehicles[index].id = index;
-            game_modal.vehicles[index].used = 0;
+        Object.keys(game_model.vehicles).forEach(function(index) {
+            game_model.vehicles[index].id = index;
+            game_model.vehicles[index].used = 0;
         });
     },
     methods: {
         use_vehicle: function(vehicle) {
             vehicle.used = ((vehicle.used + 1) > vehicle.total_no) ? vehicle.total_no : ++vehicle.used;
-            game_modal.visit_list[game_modal.visit_list.length - 1].vehicle = vehicle;
+            game_model.visit_list[game_model.visit_list.length - 1].vehicle = vehicle;
+            total_time_view.calculate_total_time();
         },
         remove_vehicle: function(vehicle) {
-            if (game_modal.visit_list[game_modal.visit_list.length - 1].vehicle == vehicle) {
+            if (game_model.visit_list[game_model.visit_list.length - 1].vehicle == vehicle) {
                 vehicle.used = ((vehicle.used - 1) < 0) ? 0 : --vehicle.used;
-                game_modal.visit_list[game_modal.visit_list.length - 1].vehicle = {};
+                game_model.visit_list[game_model.visit_list.length - 1].vehicle = {};
             } else {
                 show_alert('#cannot_remove_alert');
             }
         },
         disable_vehicle: function(vehicle) {
-            if (vehicle.used == vehicle.total_no || get_total_used_vehicles() >= game_modal.visit_list.length || game_modal.visit_list.length > 0 && vehicle.max_distance < game_modal.visit_list[game_modal.visit_list.length - 1].distance) {
+            if (vehicle.used == vehicle.total_no || get_total_used_vehicles() >= game_model.visit_list.length || game_model.visit_list.length > 0 && vehicle.max_distance < game_model.visit_list[game_model.visit_list.length - 1].distance) {
                 return 'disable';
             } else {
                 return '';
@@ -103,25 +101,27 @@ var vehicle_view = new Vue({
 
 var planet_view = new Vue({
     el: '#space_box',
-    data: game_modal,
+    data: game_model,
     init: function() {
-        Object.keys(game_modal.planets).forEach(function(index) {
-            game_modal.planets[index].id = index;
-            game_modal.planets[index].vehicle = {};
+        Object.keys(game_model.planets).forEach(function(index) {
+            game_model.planets[index].id = index;
+            game_model.planets[index].vehicle = {};
         });
     },
     ready: function() {
+      if (navigator.userAgent.match(/ipad|iphone|ipod|android/i)) {
         new Parallax(document.getElementById('space'));
+      }
     },
     methods: {
         visit_planet: function(planet) {
-            if (game_modal.visit_list.length < 4 && game_modal.visit_list.indexOf(planet) < 0) {
-                if (game_modal.visit_list.length > 0 && $.isEmptyObject(game_modal.visit_list[game_modal.visit_list.length - 1].vehicle)) {
+            if (game_model.visit_list.length < 4 && game_model.visit_list.indexOf(planet) < 0) {
+                if (game_model.visit_list.length > 0 && $.isEmptyObject(game_model.visit_list[game_model.visit_list.length - 1].vehicle)) {
                     show_alert('#choose_planet_alert');
                 } else {
-                    game_modal.visit_list.push(planet);
+                    game_model.visit_list.push(planet);
                 }
-            } else if (game_modal.visit_list.length < 4) {
+            } else if (game_model.visit_list.length < 4) {
                 show_alert('#visit_repeat_alert');
             } else {
                 show_alert('#visit_limit_alert');
@@ -132,7 +132,7 @@ var planet_view = new Vue({
 
 var visit_view = new Vue({
     el: '#visit_list',
-    data: game_modal,
+    data: game_model,
     methods: {
         dont_visit: function(visit, event) {
             $(event.target.parentNode).tooltip('destroy');
@@ -145,16 +145,19 @@ var visit_view = new Vue({
 
 var total_time_view = new Vue({
     el: "#total_time",
-    data: game_modal,
-    computed: {
-        total_time: function() {
+    data: {total_time:0},
+    methods: {
+        calculate_total_time: function() {
             var tot_time = 0;
-            Object.keys(this.visit_list).forEach(function(index) {
-                if (!$.isEmptyObject(this.game_modal.visit_list[index].vehicle)) {
-                    tot_time += (this.game_modal.visit_list[index].distance / this.game_modal.visit_list[index].vehicle.speed);
+            Object.keys(game_model.visit_list).forEach(function(index) {
+                if (!$.isEmptyObject(game_model.visit_list[index].vehicle)) {
+                    tot_time += (game_model.visit_list[index].distance / game_model.visit_list[index].vehicle.speed);
                 }
             });
-            return tot_time;
+            this.total_time = tot_time;
         }
+    },
+    created: function(){
+      this.calculate_total_time();
     }
 });
