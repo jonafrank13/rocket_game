@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#info").parent().niceScroll();
+    if($(window).width() >= 500){$("#info").parent().niceScroll();}
     vehicle_view.$mount('#vehicles');
     planet_view.$mount('#space_box');
     visit_view.$mount('#visit_list');
